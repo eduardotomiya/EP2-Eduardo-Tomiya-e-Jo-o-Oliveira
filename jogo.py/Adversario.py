@@ -2,6 +2,17 @@ import random
 
 # PARA TESTAS O SEU CÓDIGO NA ACADEMIA PYTHON SERÁ NECESSÁRIO COLAR AS FUNÇÕES DESENVOLVIDAS AQUI!!!
 
+def afundados(frota, tabuleiro):
+    soma = 0
+    for navio in frota:
+        afundado = True
+        for coordenada in navio["posicoes"]:
+            if tabuleiro[coordenada[0]][coordenada[1]] != "X":
+                afundado = False
+                break
+        if afundado:
+            soma += 1
+    return soma
 
 
 
