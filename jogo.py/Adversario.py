@@ -41,6 +41,34 @@ def faz_jogada(tabuleiro, linha, coluna):
         tabuleiro[linha][coluna] = "-"
 
     return tabuleiro
+
+def posiciona_frota(frota):
+    matriz = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ]
+
+    for navio in frota:
+        tipo = navio["tipo"]
+        posicoes = navio["posicoes"]
+
+        for posicao in posicoes:
+            linha, coluna = posicao
+            matriz[linha][coluna] = 1
+
+    return matriz
+
+
+
+
 def preenche_frota(dados_posicionamento, nome_navio, frota):
     linha = dados_posicionamento['linha']
     coluna = dados_posicionamento['coluna']
